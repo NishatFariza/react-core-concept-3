@@ -22,8 +22,20 @@ function LoadComments(){
    return(
      <div>
        <h2>Total Comments: {comments.length}</h2>
+       {
+         comments.map(comment => <Comment email={comment.email} body={comment.body}></Comment>)
+       }
      </div>
    )
+}
+
+function Comment (props){
+  return(
+    <div>
+      <h4>Email: {props.email}</h4>
+      <p>{props.body}</p>
+    </div>
+  )
 }
 
 
